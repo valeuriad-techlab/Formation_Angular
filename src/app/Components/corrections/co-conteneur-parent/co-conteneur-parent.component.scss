@@ -1,0 +1,43 @@
+.conteneurParent{
+    border: 2px solid red;
+    padding: 4px;
+    color: red;
+}
+
+.headerParent{
+    height: 200px;
+    padding: 4px;
+    border:1px solid gray;
+    border-bottom: 2px solid gray;
+    background-color: rgba($color: gray, $alpha: 0.1);
+    margin-bottom: 20px;
+    color : gray;
+}
+
+.inputRole{
+    height: 30px;
+    width: 300px;
+}
+
+.conteneurHisto{
+    height: 120px;
+    border: 1px solid black;
+    overflow-y: auto;
+    padding: 4px;
+    background-color: white;
+}
+
+.conteneurEnfants{
+    margin: auto;
+    border:1px solid black;
+    padding: 4px;
+    color: maroon;
+}
+
+.moduleEnfant{
+    background-color: rgba($color: #000000, $alpha: .1);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 4px;
+    border: 1px solid gray;
+}

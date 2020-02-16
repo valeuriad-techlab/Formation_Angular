@@ -1,0 +1,34 @@
+<div class="conteneurParent">
+    Conteneur Parent
+    <div class="headerParent">
+        Header Parent
+        <div class="row">
+            <div class="col-md-4">
+                <p>(Event Binding et Two-Way-Binding) Mon rôle de composant me permet de :</p>
+                <input class="inputRole" type="text" (change)="onEventChangeInput(role)" >
+                <p>(Interpolation) L'historique comporte N demande</p>
+                <input class="inputRole" type="text" [ngModel]="nbHisto" disabled>
+            </div>
+            <div class="col-md-4">
+                <p>Historique :</p>
+                <ul class="conteneurHisto">
+                    <li *ngFor="let action of historique">{{action}}</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <p>Un des enfants m'informe que : {{retourInfo}}</p>  
+            </div>
+        </div>
+    </div>
+    <div class="conteneurEnfants">
+        Conteneur Enfants
+        <!-- Je suis le composant binding-->
+        <div class="moduleEnfant">
+            <app-co-communication [(roleConteneurParent)]="role" (send)="onEventCommunication($event)" ></app-co-communication>
+        </div>
+        <!--<div class="moduleEnfant">
+            <app-communication [(roleConteneurParent)]="role" (send)="onEventCommunication($event)"></app-communication>
+        </div>-->
+    </div>
+</div>
+

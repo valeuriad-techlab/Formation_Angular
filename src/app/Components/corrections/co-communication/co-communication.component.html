@@ -1,0 +1,8 @@
+<h5>Je suis le composant communication</h5>
+<p>le conteneur parent m'informe : {{roleConteneurParent}}</p>
+
+<p>Je dis au composant parent :</p>
+<div class="actions">
+    <input type="text" [(ngModel)]="data">
+    <button class="btn btn-success" (click)="onEventData()">Envoyer</button>
+</div>
