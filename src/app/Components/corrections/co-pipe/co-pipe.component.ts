@@ -9,6 +9,8 @@ export class CoPipeComponent implements OnInit {
 
   constructor() { }
 
+  text: string = "Bonjour je m'apppelle Julien ! Je t'appelle depuis Julien ville !";
+
   ngOnInit(): void {
   }
 
