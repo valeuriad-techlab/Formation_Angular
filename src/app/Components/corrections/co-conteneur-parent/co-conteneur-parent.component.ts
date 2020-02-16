@@ -1,4 +1,4 @@
-import { Component, OnInit, Pipe } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-co-conteneur-parent',
@@ -7,10 +7,10 @@ import { Component, OnInit, Pipe } from '@angular/core';
 })
 export class CoConteneurParentComponent implements OnInit {
 
-  role:string = "Je suis le maitre";
-  nbHisto:number = 0;
-  retourInfo:string;
-  historique:string[] = [];
+  role: string = "Je suis le maitre";
+  nbHisto: number = 0;
+  retourInfo: string;
+  historique: string[] = [];
 
   constructor() { }
 
@@ -22,7 +22,7 @@ export class CoConteneurParentComponent implements OnInit {
    * @description Event déclenché lors de la reception d'unedonnée envoyé par notre nenfant
    * @param data la données en question. Ici un string
    */
-  onEventCommunication(data:string):void{
+  onEventCommunication(data: string): void {
     this.retourInfo = data;
   }
 
@@ -31,7 +31,7 @@ export class CoConteneurParentComponent implements OnInit {
    * @description Event déclanché lors du changement d'état de notre input parent
    * @param data la données de l'input parent
    */
-  onEventChangeInput(data:string){
+  onEventChangeInput(data: string) {
     this.role = data;
     this.historique.push(data);
     this.nbHisto = this.historique.length;

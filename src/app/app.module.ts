@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
- 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './Components/root/app.component';
 import { AideComponent } from './Components/aide/aide.component';
@@ -10,6 +10,7 @@ import { CoConteneurParentComponent } from './Components/corrections/co-conteneu
 import { CoCommunicationComponent } from './Components/corrections/co-communication/co-communication.component';
 import { CoApiRestComponent } from './Components/corrections/co-api-rest/co-api-rest.component';
 import { CoPipeComponent } from './Components/corrections/co-pipe/co-pipe.component';
+import { CoReplaceTextPipe } from './Components/corrections/pipes/co-replace-text/co-replace-text.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CoPipeComponent } from './Components/corrections/co-pipe/co-pipe.compon
     CoConteneurParentComponent,
     CoCommunicationComponent,
     CoApiRestComponent,
-    CoPipeComponent
+    CoPipeComponent,
+    CoReplaceTextPipe,
   ],
   imports: [
     BrowserModule,
