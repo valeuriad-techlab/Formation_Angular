@@ -4,19 +4,23 @@
         Header Parent
         <div class="row">
             <div class="col-md-4">
-                <p>(Event Binding et Two-Way-Binding) Mon rôle de composant me permet de :</p>
-                <input class="inputRole" type="text" (change)="onEventChangeInput(role)" >
-                <p>(Interpolation) L'historique comporte N demande</p>
-                <input class="inputRole" type="text" [ngModel]="nbHisto" disabled>
+                <div>
+                    <div>(Event Binding) Mon rôle de composant me permet de :</div>
+                    <input class="inputRole" type="text" (change)="onEventChangeInput(role)" />
+                </div>
+                <div>
+                    <div>(Property Binding) L'historique comporte N demande</div>
+                    <input class="inputRole" type="text" [ngModel]="nbHisto" disabled />
+                </div>
             </div>
             <div class="col-md-4">
-                <p>Historique :</p>
+                <div>Historique :</div>
                 <ul class="conteneurHisto">
                     <li *ngFor="let action of historique">{{action}}</li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <p>Un des enfants m'informe que : {{retourInfo}}</p>  
+                <div>Un des enfants m'informe que : {{retourInfo}}</div>  
             </div>
         </div>
     </div>
@@ -26,9 +30,9 @@
         <div class="moduleEnfant">
             <app-co-communication [(roleConteneurParent)]="role" (send)="onEventCommunication($event)" ></app-co-communication>
         </div>
-        <!--<div class="moduleEnfant">
-            <app-communication [(roleConteneurParent)]="role" (send)="onEventCommunication($event)"></app-communication>
-        </div>-->
+        <div class="moduleEnfant">
+            <app-co-api-rest></app-co-api-rest>
+        </div>
     </div>
 </div>
 

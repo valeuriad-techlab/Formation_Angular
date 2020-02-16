@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
- 
+import { HttpClientModule, HttpHandler } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './Components/root/app.component';
 import { AideComponent } from './Components/aide/aide.component';
 import { BienvenueComponent } from './Components/bienvenue/bienvenue.component';
@@ -24,7 +25,8 @@ import { CoPipeComponent } from './Components/corrections/co-pipe/co-pipe.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

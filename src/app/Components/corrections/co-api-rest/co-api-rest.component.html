@@ -1,1 +1,14 @@
-<p>api-rest works!</p>
+<h5>Je suis le composant api rest</h5>
+<div>La liste des utilisateurs :</div>
+<button (click)="onReloadUser()">Reload Liste USER</button>
+<button (click)="onRemoveUser()">Remove User</button>
+<button (click)="onChangeUser()">Change User</button>
+<input type="text" [(ngModel)]="userAdd.name">
+<button (click)="onAddUser()">Add User</button>
+<div *ngFor="let user of maListeUsers">
+    <div class="infoOneUser">
+        <div><span class="infosUser">Nom : {{ user.name }}</span><span class="infosUser">Age : {{ user.age }}</span></div>
+        <div><span class="infosUser">Adresse : {{ user.address }}</span><span class="infosUser">Tel : {{ user.phoneNumber }}</span></div>
+        <div><span class="infosUser">Email : {{ user.email }}</span></div>
+    </div>
+</div>

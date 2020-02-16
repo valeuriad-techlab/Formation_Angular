@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  listUser : 'http://localhost',
+  addUser : 'http://localhost',
+  removeUser : 'http://localhost',
+  changeUser : 'http://localhost',
 };
