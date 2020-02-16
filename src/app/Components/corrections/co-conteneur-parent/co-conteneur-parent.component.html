@@ -6,7 +6,7 @@
             <div class="col-md-4">
                 <div>
                     <div>(Event Binding) Mon rôle de composant me permet de :</div>
-                    <input class="inputRole" type="text" (change)="onEventChangeInput(role)" />
+                    <input class="inputRole" type="text" [value]="role" (change)="onEventChangeInput($event)" />
                 </div>
                 <div>
                     <div>(Property Binding) L'historique comporte N demande</div>

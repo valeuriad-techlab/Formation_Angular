@@ -29,11 +29,11 @@ export class CoConteneurParentComponent implements OnInit {
   /**
    * @name onEventChangeInput
    * @description Event déclanché lors du changement d'état de notre input parent
-   * @param data la données de l'input parent
+   * @param objEvent la données de l'input parent
    */
-  onEventChangeInput(data: string) {
-    this.role = data;
-    this.historique.push(data);
+  onEventChangeInput(objEvent) {
+    this.role = objEvent.target.value;
+    this.historique.push( this.role);
     this.nbHisto = this.historique.length;
   }
 
