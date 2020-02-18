@@ -1,14 +1,42 @@
 <h5>Je suis le composant api rest</h5>
-<div>La liste des utilisateurs :</div>
+
 <button (click)="onReloadUser()">Reload Liste USER</button>
-<button (click)="onRemoveUser()">Remove User</button>
-<button (click)="onChangeUser()">Change User</button>
-<input type="text" [(ngModel)]="userAdd.name">
-<button (click)="onAddUser()">Add User</button>
-<div *ngFor="let user of maListeUsers">
-    <div class="infoOneUser">
-        <div><span class="infosUser">Nom : {{ user.name }}</span><span class="infosUser">Age : {{ user.age }}</span></div>
-        <div><span class="infosUser">Adresse : {{ user.address }}</span><span class="infosUser">Tel : {{ user.phoneNumber }}</span></div>
-        <div><span class="infosUser">Email : {{ user.email }}</span></div>
+<div class="row">
+    <div class="col-md-6">
+        <input type="text" [(ngModel)]="userAdd.name">
+        <button (click)="onAddUser()">Add User</button>
     </div>
+    <div class="col-md-6">
+        <input type="text" [(ngModel)]="articleAdd.nom">
+        <button (click)="onAddArticle()">Add Article</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div>La liste des utilisateurs :</div>
+        <div *ngFor="let user of maListeUsers">
+
+            <div class="infoOneUser">
+                <div><span class="infosUser">Nom : {{ user.name }}</span><span class="infosUser">Age :
+                        {{ user.age }}</span></div>
+                <div><span class="infosUser">Adresse : {{ user.address }}</span><span class="infosUser">Tel :
+                        {{ user.phoneNumber }}</span></div>
+                <div><span class="infosUser">Email : {{ user.email }}</span></div>
+                <input type="text" [(ngModel)]="user.name" />
+                <input type="button" (click)="onChangeUser(user)" value="Modifier le nom de User" />
+                <input type="button" (click)="onRemoveUser(user)" value="Delete User" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div>La liste des articles :</div>
+        <div *ngFor="let article of maListeArticle">
+
+            <div class="infoOneUser">
+                <div><span class="infosUser">Nom : {{ article.nom }}</span></div>
+            </div>
+        </div>
+    </div>
+
 </div>

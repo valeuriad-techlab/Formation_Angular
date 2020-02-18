@@ -1,8 +1,9 @@
-<div>
-  <nav>
-    <a routerLink="" routerLinkActive="active">Home</a>
-    <a routerLink="/correction" routerLinkActive="active">Correction</a>
-    <a routerLink="/aide" routerLinkActive="active">Aide</a>
-  </nav>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar>
+  <button mat-menu-item routerLink="" routerLinkActive="active"><mat-icon>home</mat-icon><span>Home</span></button>
+  <button mat-menu-item [matMenuTriggerFor]="menu"><mat-icon>drag_indicator</mat-icon><span>Actions</span></button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/correction" routerLinkActive="active"><mat-icon>dialpad</mat-icon><span>Correction</span></button>
+    <button mat-menu-item routerLink="/aide" routerLinkActive="active"><mat-icon>live_help</mat-icon><span>Aide</span></button>
+  </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>

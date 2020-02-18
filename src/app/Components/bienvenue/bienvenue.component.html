@@ -1,1 +1,5 @@
 <div class="titre">Bienvenue sur la formation Angular 8</div>
+
+<div *ngFor="let ingre of liste | monPipe:'nom':'poids'">
+    {{ingre.nom}} - {{ingre.poids}}
+</div>

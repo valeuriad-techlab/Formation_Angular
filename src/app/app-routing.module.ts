@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'aide', component: AideComponent },
   { path: 'correction', component: CoConteneurParentComponent },
   { path: 'correction/pipe', component: CoPipeComponent },
-  { path: '', component: BienvenueComponent }
+  { path: '', component: BienvenueComponent },
+  { path: '**', component: BienvenueComponent }
 ];
 
 @NgModule({

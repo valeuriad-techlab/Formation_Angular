@@ -12,6 +12,12 @@ import { CoCommunicationComponent } from './Components/corrections/co-communicat
 import { CoApiRestComponent } from './Components/corrections/co-api-rest/co-api-rest.component';
 import { CoPipeComponent } from './Components/corrections/co-pipe/co-pipe.component';
 import { CoReplaceTextPipe } from './Components/corrections/pipes/co-replace-text/co-replace-text.pipe';
+import { MonPipePipe } from './Pipe/mon-pipe.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,12 +29,18 @@ import { CoReplaceTextPipe } from './Components/corrections/pipes/co-replace-tex
     CoApiRestComponent,
     CoPipeComponent,
     CoReplaceTextPipe,
+    MonPipePipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

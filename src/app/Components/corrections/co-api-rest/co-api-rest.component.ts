@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoApiPhpService } from 'src/app/Services/corrections/CoApiPhp/co-api-php.service';
 import { User } from 'src/app/Models/corrections/user';
+import { Article } from 'src/app/Models/corrections/article';
 
 @Component({
   selector: 'app-co-api-rest',
@@ -11,8 +12,10 @@ export class CoApiRestComponent implements OnInit {
 
   private apiService:CoApiPhpService;
   public maListeUsers:User[] = [];
+  public maListeArticle:Article[] = [];
   public infosUser:string;
   public userAdd:User = new User();
+  public articleAdd:Article = new Article();
 
 
   constructor(coApiPhpService : CoApiPhpService) {
@@ -21,6 +24,7 @@ export class CoApiRestComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListUser();
+    this.getListArticles();
   }
 
   /**
@@ -31,6 +35,13 @@ export class CoApiRestComponent implements OnInit {
     this.apiService.listerUtilisateur().subscribe( (listUser:User[]) =>{
       // j'ai le retour de ma requête
       this.maListeUsers = listUser;
+    });
+  }
+
+  private getListArticles():void{
+    this.apiService.listerArticles().subscribe( (listArticle:Article[]) =>{
+      // j'ai le retour de ma requête
+      this.maListeArticle = listArticle;
     });
   }
 
@@ -46,9 +57,10 @@ export class CoApiRestComponent implements OnInit {
    * @name onRemoveUser
    * @description Event déclanché sur le clique du bouton Remove
    */
-  public onRemoveUser():void{
-    this.apiService.removeUtilisateur().subscribe( (message:string) =>{
+  public onRemoveUser(user:User):void{
+    this.apiService.removeUtilisateur(user.id).subscribe( (message:string) =>{
       this.infosUser = message;
+      this.getListUser();
     });
   }
 
@@ -56,9 +68,10 @@ export class CoApiRestComponent implements OnInit {
    * @name onChangeUser
    * @description Event déclanché sur le clique du bouton Chnage USer
    */
-  public onChangeUser():void{
-    this.apiService.changeUtilisateur().subscribe((message:string) =>{
+  public onChangeUser(user:User):void{
+    this.apiService.changeUtilisateur(user).subscribe((message:string) =>{
       this.infosUser = message;
+      this.getListUser();
     });
   }
 
@@ -69,6 +82,18 @@ export class CoApiRestComponent implements OnInit {
   public onAddUser():void{
     this.apiService.addUtilisateur(this.userAdd).subscribe( (message:string) =>{
       this.infosUser = message;
+      this.getListUser();
+    });
+  }
+
+  /**
+   * @name onAddArticle
+   * @description Event déclanché sur le clique du bouton Add Article
+   */
+  public onAddArticle():void{
+    this.apiService.ajouterArticle(this.articleAdd).subscribe( (message:string) =>{
+      this.infosUser = message;
+      this.getListArticles();
     });
   }
 }

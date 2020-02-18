@@ -4,10 +4,12 @@
 
 export const environment = {
   production: false,
-  listUser : 'http://localhost',
-  addUser : 'http://localhost',
-  removeUser : 'http://localhost',
-  changeUser : 'http://localhost',
+  listUser : 'http://localhost:3000/users',
+  addUser : 'http://localhost:3000/users',
+  removeUser : 'http://localhost:3000/users',
+  changeUser : 'http://localhost:3000/users',
+  listArticles: 'http://localhost:3000/articles',
+  addArticle : 'http://localhost:3000/articles',
 };
 
 /*

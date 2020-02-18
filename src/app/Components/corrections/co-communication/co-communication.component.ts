@@ -9,8 +9,7 @@ export class CoCommunicationComponent implements OnInit {
 
   @Input()
   roleConteneurParent:string;
-
-  
+    
   data:string;
 
   @Output()
