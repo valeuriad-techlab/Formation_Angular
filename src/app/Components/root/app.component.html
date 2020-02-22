@@ -1,0 +1,20 @@
+<div>
+  <!-- <nav>
+    <a routerLink="" routerLinkActive="active">Home</a>
+    <a routerLink="/correction" routerLinkActive="active">Correction</a>
+    <a routerLink="/aide" routerLinkActive="active">Aide</a>
+    <a routerLink="/parent" routerLinkActive="active">Parent</a>
+    <a routerLink="/parent/enfant" routerLinkActive="active">Enfant</a>
+  </nav> -->
+  <div matRipple [matMenuTriggerFor]="mainMenu" (click)="onClick($event)">TOTO</div>
+  <!-- <button mat-button [matMenuTriggerFor]="mainMenu">CLIC</button> -->
+  <mat-menu #mainMenu="matMenu">
+    <button mat-menu-item routerLink="" routerLinkActive="active">Home</button>
+    <button mat-menu-item routerLink="/correction" routerLinkActive="active">Correction</button>
+    <button mat-menu-item routerLink="/aide" routerLinkActive="active">Aide</button>
+    <button mat-menu-item routerLink="/parent" routerLinkActive="active">Parent</button>
+    <button mat-menu-item routerLink="/parent/enfant" routerLinkActive="active">Enfant</button>
+  </mat-menu>
+  
+  <router-outlet></router-outlet>
+</div>

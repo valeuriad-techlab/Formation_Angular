@@ -1,0 +1,62 @@
+<div class="titre" #titre>Bienvenue sur la formation Angular 8</div>
+
+<div *ngFor="let element of liste | arraySort" >
+    {{element.name}} : {{element.qty}} {{element.quantifier}}
+</div>
+
+<hr>
+
+<quill-editor [(ngModel)]="quillData"></quill-editor>
+
+<pre>{{quillData}}</pre>
+
+<hr>
+
+<form (ngSubmit)="onSubmit(monForm)" #monForm="ngForm">
+    <input type="email" name="courriel" placeholder="Email" ngModel required>
+    <input type="text" name="couleur" placeholder="Couleur" ngModel>
+    <select name="ingredient" ngModel>
+        <option *ngFor="let element of liste" [value]="element.name">
+            {{element.name}} : {{element.qty}} {{element.quantifier}}
+        </option>
+    </select>
+    <button type="submit">Soumettre</button>
+</form>
+
+<form mat-form (ngSubmit)="onSubmit(monForm)" #monForm="ngForm">
+    <mat-form-field appearance="fill">
+        <mat-label>Courriel</mat-label>
+        <input type="email" name="courriel" placeholder="EMAIL" matInput ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Couleur</mat-label>
+        <input type="text" name="couleur" placeholder="EMAIL" matInput ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Ingrédient</mat-label>
+        <mat-select name="ingredient" ngModel>
+            <mat-option *ngFor="let element of liste" [value]="element.name">{{element.name}} : {{element.qty}}
+                {{element.quantifier}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-button type="submit">Soumettre</button>
+</form>
+
+<hr>
+
+<form (ngSubmit)="onSubmit2()" [formGroup]="formulaire">
+    <input type="email" name="courriel" placeholder="Email" formControlName="courriel">
+    <input type="text" name="couleur" placeholder="Couleur" formControlName="couleur">
+    <select name="ingredient" formControlName="ingredient">
+        <option *ngFor="let element of liste" [value]="element.name">
+            {{element.name}} : {{element.qty}} {{element.quantifier}}
+        </option>
+    </select>
+    <button type="submit">Soumettre</button>
+</form>
+
+<!-- <button mat-button (click)="log()">Bouton</button> -->
+
+{{"Bonjour, Bonjour" | textSearch:'Bonjour':'Au Revoir'}}
